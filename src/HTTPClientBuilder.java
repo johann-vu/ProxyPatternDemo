@@ -18,10 +18,12 @@ public class HTTPClientBuilder {
 	}
 	
 	public HTTPClientBuilder AddCache() {
-		return new HTTPClientBuilder(showDevLog, new CacheProxy(client, showDevLog));
+		client = new CacheProxy(client, showDevLog);
+		return this;
 	}
 	
 	public HTTPClientBuilder AddRetry(int maxRetries) {
-		return new HTTPClientBuilder(showDevLog, new RetryProxy(client, maxRetries, showDevLog));
+		client = new RetryProxy(client, maxRetries, showDevLog);
+		return this;
 	}
 }
