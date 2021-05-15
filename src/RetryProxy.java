@@ -25,7 +25,7 @@ public class RetryProxy implements IHTTPClient {
 				break;
 			}
 		}
-		Printer.PrintDeveloperInfos("CacheProxy returns response", showDevLog);
+		Printer.PrintDeveloperInfos("RetryProxy returns response", showDevLog);
 		return response;
 	}
 }
